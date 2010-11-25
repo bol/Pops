@@ -1,0 +1,12 @@
+mkdir ~/raknet && cd ~/raknet
+wget http://www.raknet.net/raknet/downloads/RakNet-4.0.Beta8.zip
+unzip ..
+apt-get install libbz2dev libboost-all-dev libspeexdps-dev
+cmake -DUSEPORTAUDIO=FALSE -DUSEIOS=FALSE -DUSEOGRE3D=FALSE -DUSEIRRKLANG=FALSE -DUSEIRRLICHT=FALSE -DUSEPOSTGRESQL=FALSE .
+fix a couple of examples not including Gets.h
+make
+make install
+mv include ../pops/raknet/.
+mv Lib/DLL/libRakNetDynamic.so ../pops/raknet/.
+
+
